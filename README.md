@@ -1,5 +1,5 @@
 
-# MonoBunnii.Coroutines
+# MonoBunni.Coroutines
 
 A modified version of the Xenon.Core's implementation of Coroutines for use in MonoBunnii.
 
