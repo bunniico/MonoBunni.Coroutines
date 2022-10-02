@@ -3,24 +3,24 @@
 namespace MonoBunni.Library.Coroutines
 {
     /// <summary>
-    /// A sub routine
+    /// A routine than can be executed synchronously within a Behavior.
     /// </summary>
     public abstract class Routine
     {
         /// <summary>
-        /// Executes the routine
+        /// Executes the routine.
         /// </summary>
         public abstract void Execute();
 
         /// <summary>
-        /// Updates the routine
+        /// Updates the routine.
         /// </summary>
-        /// <param name="gameTime"></param>
+        /// <param name="gameTime">The gameTime.</param>
         public virtual void Update(GameTime gameTime) { }
 
         /// <summary>
-        /// Gets if this coroutine has finished
+        /// Is this routine done?
         /// </summary>
-        public bool Done { get; protected set; }
+        public bool IsDone { get; protected set; }
     }
 }

@@ -24,18 +24,24 @@ namespace MonoBunni.Library.Coroutines
         /// <param name="source">The given coroutine source.</param>
         public void StartCoroutine(IEnumerable source)
         {
-            var handler = new RoutineHandle(source);
-            Routines.Add(handler);
-            handler.Step();
+            var coroutineHandler = new RoutineHandle(source);
+            Routines.Add(coroutineHandler);
+            coroutineHandler.Step();
         }
 
         /// <summary>
-        /// Updates this <see cref="GameComponent"/>
+        /// Updates each coroutine.
         /// </summary>
-        /// <param name="gameTime"></param>
+        /// <param name="gameTime">The gameTime.</param>
         public override void Update(GameTime gameTime)
         {
-            Routines.ForEach(routineHandle => routineHandle.Update(gameTime));
+            // Update each coroutine.
+            foreach (var routineHandle in Routines)
+            {
+                routineHandle.Update(gameTime);
+            }
+
+            // Clean up finished coroutines.
             foreach(var handle in Routines.Where(handle => handle.Done))
             {
                 Routines.Remove(handle);

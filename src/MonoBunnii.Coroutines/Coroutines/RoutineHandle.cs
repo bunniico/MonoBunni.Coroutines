@@ -21,7 +21,7 @@ namespace MonoBunni.Library.Coroutines
             // int value skips x number of frames
             var routine = _routines.Current as Routine;
 
-            if (routine == null || routine.Done)
+            if (routine == null || routine.IsDone)
                 Step();
             else 
                 routine.Update(gameTime);

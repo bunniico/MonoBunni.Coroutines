@@ -57,7 +57,7 @@ namespace MonoBunni.Library.Coroutines
             _elapsed = _elapsed.Add(gameTime.ElapsedGameTime);
 
             if (_elapsed.TotalMilliseconds >= Interval.TotalMilliseconds)
-                Done = true;
+                IsDone = true;
         }
 
 
