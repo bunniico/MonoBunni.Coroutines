@@ -1,5 +1,12 @@
+=====================
+MonoBunnii.Coroutines
+=====================
+
+A modified version of the Xenon.Core's implementation of Coroutines for use in MonoBunnii.
+
+=====================
 Xenon.Core
-==========
+=====================
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/adamveld12/Xenon.Core?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
