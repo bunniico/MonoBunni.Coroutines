@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace MonoBunni.Library.Coroutines
+namespace MonoBunni.Coroutines
 {
     /// <summary>
     /// Executes and manages coroutines

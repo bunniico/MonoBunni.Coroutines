@@ -1,6 +1,7 @@
 using System;
+using Microsoft.Xna.Framework;
 
-namespace MonoBunni.Library.Coroutines
+namespace MonoBunni.Coroutines
 {
     /// <summary>
     /// Pauses execution of a coroutine for the specified interval.
