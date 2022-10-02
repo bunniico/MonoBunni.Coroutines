@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace Xenon.Core.Coroutines
+namespace MonoBunni.Library.Coroutines
 {
     internal class RoutineHandle
     {

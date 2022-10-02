@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Xenon.Core.Coroutines
+namespace MonoBunni.Library.Coroutines
 {
     /// <summary>
     /// Manages active co routines
@@ -22,7 +22,7 @@ namespace Xenon.Core.Coroutines
         /// 
         /// </summary>
         /// <param name="source"></param>
-        public void Run(IEnumerable source)
+        public void StartCoroutine(IEnumerable source)
         {
             var handler = new RoutineHandle(source);
             _routines.Add(handler);

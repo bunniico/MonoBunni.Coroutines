@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace Xenon.Core.Coroutines
+namespace MonoBunni.Library.Coroutines
 {
     /// <summary>
     /// Executes and manages coroutines
@@ -8,9 +8,9 @@ namespace Xenon.Core.Coroutines
     public interface ICoroutineManager
     {
         /// <summary>
-        /// 
+        /// Starts a Couroutine.
         /// </summary>
-        /// <param name="source"></param>
-        void Run(IEnumerable source);
+        /// <param name="source">The source coroutine to be started.</param>
+        void StartCoroutine(IEnumerable source);
     }
 }

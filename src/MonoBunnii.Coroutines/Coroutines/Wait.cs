@@ -1,6 +1,6 @@
 using System;
 
-namespace Xenon.Core.Coroutines
+namespace MonoBunni.Library.Coroutines
 {
     /// <summary>
     /// Pauses execution of a coroutine for the specified interval

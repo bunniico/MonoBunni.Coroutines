@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Xenon.Core.Coroutines
+namespace MonoBunni.Library.Coroutines
 {
     /// <summary>
     /// A sub routine
