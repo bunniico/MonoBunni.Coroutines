@@ -5,42 +5,56 @@ namespace MonoBunni.Library.Coroutines
 {
     internal class RoutineHandle
     {
-        private readonly IEnumerator _routines;
-
         public RoutineHandle(IEnumerable routines)
         {
-            _routines = routines.GetEnumerator();
+            Routines = routines.GetEnumerator();
         }
 
+        /// <summary>
+        /// The list of active coroutines.
+        /// </summary>
+        private readonly IEnumerator Routines;
+
+        /// <summary>
+        /// Updates the routine.
+        /// </summary>
         public void Update(GameTime gameTime)
         {
-
-            // maybe do some nifty type detection here 
-            // float values are total seconds
-            // bool value of false should halt coroutine execution
-            // int value skips x number of frames
-            var routine = _routines.Current as Routine;
+            var routine = Routines.Current as Routine;
 
             if (routine == null || routine.IsDone)
+            {
                 Step();
-            else 
-                routine.Update(gameTime);
+                return;
+            }
+
+            routine.Update(gameTime);
         }
 
+        /// <summary>
+        /// Steps forward in the routine.
+        /// </summary>
         public void Step()
         {
-            if (_routines.MoveNext())
+            if (!Routines.MoveNext())
             {
-                var routine = _routines.Current as Routine;
+                return;
+            }
 
-                if(routine != null)
-                    routine.Execute();
+            var routine = Routines.Current as Routine;
+
+            if (routine != null)
+            {
+                routine.Execute();
             }
         }
 
+        /// <summary>
+        /// Returns true if the routine cannot proceed any further.
+        /// </summary>
         public bool Done
         {
-            get { return !_routines.MoveNext(); } 
+            get { return !Routines.MoveNext(); } 
         }
 
     }
